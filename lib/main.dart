@@ -11,6 +11,7 @@ import 'screens/scan_food_screen.dart';
 import 'screens/chat_ai_screen.dart';
 import 'screens/meal_plan_screen.dart';
 import 'screens/weight_tracker_screen.dart';
+import 'screens/tinhnang_Thien.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,7 @@ Future<void> main() async {
     print('Không tìm thấy file .env, chạy ở chế độ demo');
   }
   
-  runApp(NutriMateApp());
+  runApp(const NutriMateApp());
 }
 
 class NutriMateApp extends StatelessWidget {
@@ -43,7 +44,7 @@ class NutriMateApp extends StatelessWidget {
           useMaterial3: true,
           fontFamily: 'Roboto',
         ),
-        home: AppHome(),
+        home: const AppHome(),
         routes: {
           '/profileSetup': (context) => ProfileSetupScreen(),
           '/dashboard': (context) => DashboardScreen(),
@@ -52,6 +53,8 @@ class NutriMateApp extends StatelessWidget {
           '/chatAI': (context) => ChatAIScreen(),
           '/mealPlan': (context) => MealPlanScreen(),
           '/weightTracker': (context) => WeightTrackerScreen(),
+          '/schedulePlan': (context) => const SchedulePlanScreen(),
+          '/lichTrinh': (context) => const SchedulePlanScreen(),
         },
       ),
     );
@@ -59,12 +62,14 @@ class NutriMateApp extends StatelessWidget {
 }
 
 class AppHome extends StatelessWidget {
+  const AppHome({super.key});
+
   @override
   Widget build(BuildContext context) {
     final userProvider = context.watch<UserProvider>();
 
     if (userProvider.isLoading) {
-      return Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     // Nếu chưa setup profile → Onboarding
@@ -75,6 +80,6 @@ class AppHome extends StatelessWidget {
     }
 
     // Đã setup → Dashboard
-    return DashboardScreen();
+    return const DashboardScreen();
   }
 }
