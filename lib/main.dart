@@ -11,6 +11,7 @@ import 'screens/scan_food_screen.dart';
 import 'screens/chat_ai_screen.dart';
 import 'screens/meal_plan_screen.dart';
 import 'screens/weight_tracker_screen.dart';
+import 'screens/tinhnang_hai_tao_lich_trinh.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,6 +53,7 @@ class NutriMateApp extends StatelessWidget {
           '/chatAI': (context) => ChatAIScreen(),
           '/mealPlan': (context) => MealPlanScreen(),
           '/weightTracker': (context) => WeightTrackerScreen(),
+          '/schedule': (context) => TaoLichTrinhScreen(), // Lịch trình (Hai)
         },
       ),
     );

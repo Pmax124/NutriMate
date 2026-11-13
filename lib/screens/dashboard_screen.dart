@@ -155,6 +155,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 onTap: () => Navigator.pushNamed(context, '/weightTracker'),
               ),
             ),
+            SizedBox(height: 20),
+
+            // Nút Lịch trình (Hai)
+            Card(
+              elevation: 2,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              child: ListTile(
+                leading: Icon(Icons.event_note, color: Color(0xFFFF9800), size: 32),
+                title: Text('Lịch trình', style: TextStyle(fontWeight: FontWeight.w600)),
+                subtitle: Text('Lên lịch tăng/giảm cân theo số ngày'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: () => Navigator.pushNamed(context, '/schedule'),
+              ),
+            ),
           ],
         ),
       ),
